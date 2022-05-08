@@ -7,12 +7,8 @@ const port = process.env.PORT || 3000
 
 app.use(express.static('public'))
 
-app.get('/', (req, res) => {
-  res.send('the skid defender api!')
-})
 
 app.get('/api/listall_MC', async (req, res) => {
-    console.log(await DB_connect())
     res.send(JSON.stringify(await DB_connect()))
 })
 
