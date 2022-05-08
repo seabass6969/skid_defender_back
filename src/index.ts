@@ -5,9 +5,10 @@ import {DB_connect} from './dbsetup';
 const app = express()
 const port = process.env.PORT || 3000
 
+app.use(express.static('public'))
 
 app.get('/', (req, res) => {
-  res.send('the skid defender api! no more DOC')
+  res.send('the skid defender api!')
 })
 
 app.get('/api/listall_MC', async (req, res) => {
