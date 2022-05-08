@@ -1,5 +1,7 @@
+// @ts-nocheck
 import express from 'express';
-import {connectionString} from './settings'
+import {DB_connect} from './dbsetup';
+
 const app = express()
 const port = process.env.PORT || 3000
 
@@ -9,10 +11,14 @@ app.get('/', (req, res) => {
   res.send('the skid defender api!')
 })
 
-app.get('/api', (req, res) => {
-  res.send('api key is ' + connectionString)
+app.get('/api/listall_MC', async (req, res) => {
+    console.log(await DB_connect())
+    res.send(JSON.stringify(await DB_connect()))
 })
 
+app.get('/test', (req, res) => {
+    res.send('connected')
+})
 app.listen(port, () => {
   console.log(`Example app listening on port ${port}`)
 })
