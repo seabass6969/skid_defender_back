@@ -1,5 +1,7 @@
 import {connectionString} from './settings'
 import {Client} from 'pg';
+declare module 'pg';
+
 interface MC_Question_structure {
     id: number;
     question: String;
