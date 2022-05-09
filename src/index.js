@@ -1,6 +1,5 @@
-// @ts-nocheck
 import express from 'express';
-import {DB_connect} from './dbsetup';
+import {DB_connect} from './dbsetup.js';
 
 const app = express()
 const port = process.env.PORT || 3000
