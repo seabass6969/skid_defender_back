@@ -1,3 +1,4 @@
+//@ts-nocheck
 const dotenv = require('dotenv')
 import {ClientConfig} from 'pg'
 
