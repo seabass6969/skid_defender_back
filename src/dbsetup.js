@@ -7,6 +7,6 @@ export let DB_connect = async ()=> {
     await client.connect()
 let arrayout = [];
     let result = await client.query({rowMode: 'array',text:"SELECT * FROM skid_question_mc"})
-
+    
 return result.rows
 }

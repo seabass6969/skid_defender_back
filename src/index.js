@@ -6,6 +6,14 @@ const port = process.env.PORT || 3000
 
 app.use(express.static('public'))
 
+app.use((req, res, next) => {
+  res.setHeader("Access-Control-Allow-Origin", "https://yoursite.com");
+  res.header(
+    "Access-Control-Allow-Headers",
+    "Origin, X-Requested-With, Content-Type, Accept"
+  );
+  next();
+});
 app.get('/', (req, res) => {
   res.send('the skid defender api!')
 })
